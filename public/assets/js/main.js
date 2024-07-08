@@ -10,6 +10,7 @@ AOS.init({
 	anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
 });
 
+//feedback function that sends email 
 (function () {
 	emailjs.init("z8Ia0BVKWn4tf0ns-");
 })();
@@ -138,3 +139,79 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+	// Get all the links in the navbar
+	var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+	// Get the navbar toggler button
+	var navbarToggler = document.querySelector(".navbar-toggler");
+
+	// Get the collapse element
+	var navbarCollapse = document.querySelector(".navbar-collapse");
+
+	// Function to close the mobile menu and reset the toggler
+	function closeMobileMenu() {
+		// Remove 'show' class from navbar collapse
+		navbarCollapse.classList.remove("show");
+
+		// Add 'collapsed' class to navbar toggler
+		navbarToggler.classList.add("collapsed");
+
+		// Set aria-expanded to false
+		navbarToggler.setAttribute("aria-expanded", "false");
+	}
+
+	// Add click event listener to each nav link
+	navLinks.forEach(function (link) {
+		link.addEventListener("click", function (event) {
+			// Only run on mobile view
+			if (window.innerWidth < 992) {
+				// Adjust this value based on your Bootstrap breakpoint
+				closeMobileMenu();
+			}
+		});
+	});
+});
+
+//Blinking software developer
+var typed = new Typed("#element", {
+	strings: ["SOFTWARE ENGINEER", "FRONT END DEVELOPER", "TECH ENTHUSIAST"],
+	typeSpeed: 50,
+	backSpeed: 50,
+	loop: true,
+});
+
+// Back to Top button functionality
+window.onscroll = function () {
+	scrollFunction();
+};
+
+function scrollFunction() {
+	if (
+		document.body.scrollTop > 20 ||
+		document.documentElement.scrollTop > 20
+	) {
+		document.getElementById("back-to-top").style.display = "block";
+	} else {
+		document.getElementById("back-to-top").style.display = "none";
+	}
+}
+
+document.getElementById("back-to-top").addEventListener("click", function (e) {
+	e.preventDefault();
+	window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+//social icon delay in mobile
+function removeAOSDelayOnMobile() {
+	const element = document.getElementById("social-icons-container");
+	if (window.innerWidth <= 768) {
+		// Assuming mobile view is for screens 768px and below
+		element.removeAttribute("data-aos-delay");
+		element.removeAttribute("data-aos");
+	}
+}
+
+window.addEventListener("resize", removeAOSDelayOnMobile);
+window.addEventListener("load", removeAOSDelayOnMobile);

@@ -10,7 +10,7 @@ AOS.init({
 	anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
 });
 
-//feedback function that sends email 
+//feedback function that sends email
 (function () {
 	emailjs.init("z8Ia0BVKWn4tf0ns-");
 })();
@@ -204,14 +204,33 @@ document.getElementById("back-to-top").addEventListener("click", function (e) {
 });
 
 //social icon delay in mobile
-function removeAOSDelayOnMobile() {
-	const element = document.getElementById("social-icons-container");
-	if (window.innerWidth <= 768) {
-		// Assuming mobile view is for screens 768px and below
-		element.removeAttribute("data-aos-delay");
-		element.removeAttribute("data-aos");
-	}
-}
+// function removeAOSDelayOnMobile() {
+// 	const element = document.getElementById("social-icons-container");
+// 	if (window.innerWidth <= 768) {
+// 		// Assuming mobile view is for screens 768px and below
+// 		element.removeAttribute("data-aos-delay");
+// 		element.removeAttribute("data-aos");
+// 	}
+// }
 
-window.addEventListener("resize", removeAOSDelayOnMobile);
-window.addEventListener("load", removeAOSDelayOnMobile);
+// window.addEventListener("resize", removeAOSDelayOnMobile);
+// window.addEventListener("load", removeAOSDelayOnMobile);
+
+// Get all input elements in the form
+document.addEventListener("DOMContentLoaded", function () {
+	const inputs = document.querySelectorAll(
+		"#contact-form input, #contact-form textarea"
+	);
+
+	inputs.forEach((input, index) => {
+		input.addEventListener("keydown", function (event) {
+			if (event.key === "Enter") {
+				event.preventDefault();
+				const nextInput = inputs[index + 1];
+				if (nextInput) {
+					nextInput.focus();
+				}
+			}
+		});
+	});
+});

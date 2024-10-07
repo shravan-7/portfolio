@@ -26,7 +26,7 @@ This is a personal portfolio website for Shravan Kumar, a Computer Science Engin
 - AOS (Animate On Scroll) library
 - Typed.js
 - EmailJS
-- Line Awesome icons
+- Font Awesome icons
 
 ## Setup and Installation
 
@@ -69,4 +69,4 @@ Project Link: [https://github.com/shravan-7/portfolio](https://github.com/shrava
 - [AOS Library](https://michalsnik.github.io/aos/)
 - [Typed.js](https://github.com/mattboldt/typed.js/)
 - [EmailJS](https://www.emailjs.com/)
-- [Line Awesome Icons](https://icons8.com/line-awesome)
+- [Font Awesome Icons](https://fontawesome.com/)

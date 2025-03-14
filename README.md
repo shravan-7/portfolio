@@ -53,10 +53,6 @@ This site can be deployed on any web server or hosting platform that supports st
 
 This is a personal portfolio project, but if you have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## Contact
 
 Shravan Kumar - [shravank120@gmail.com](mailto:shravank120@gmail.com)
